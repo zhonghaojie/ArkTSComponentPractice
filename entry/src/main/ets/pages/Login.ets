@@ -46,12 +46,12 @@ struct Login {
    * 登陆
    */
   login(){
-    if(this.account === "" || this.password===""){
-      prompt.showToast({
-        message: $r('app.string.input_empty_tips')
-      })
-      return
-    }
+//    if(this.account === "" || this.password===""){
+//      prompt.showToast({
+//        message: $r('app.string.input_empty_tips')
+//      })
+//      return
+//    }
     this.isShowLoading = true
     if(this.timeOutId === null){
       this.timeOutId = setTimeout(()=>{
@@ -63,7 +63,7 @@ struct Login {
         router.replace({
           url:'pages/MainPage'
         })
-      },1000)
+      },2000)
     }
 
   }
@@ -129,6 +129,7 @@ struct Login {
         .backgroundColor($r('app.color.login_button_color'))
         .margin({ top: $r('app.float.login_button_margin_top'), bottom: $r('app.float.login_button_margin_bottom') })
         .onClick(() => {
+          this.login()
         })
 
       if(this.isShowLoading){
