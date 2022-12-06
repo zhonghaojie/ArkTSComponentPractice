@@ -1,6 +1,6 @@
 import ItemData from '../common/bean/ItemData'
 import { MainViewModel } from '../viewmodel/MainViewModel'
-
+import prompt from '@ohos.prompt';
 export class MyDataSource implements IDataSource {
   private list: any[] = []
   private listener: DataChangeListener
@@ -61,6 +61,11 @@ export default struct Home {
             Image(item).borderRadius($r('app.float.home_swiper_borderRadius'))
           }, item => item)
         }
+        .onChange((index:number)=>{
+          prompt.showToast({message:"index = "+index})
+        })
+        .interval(3000)
+        .loop(true)
         .margin({ top: $r('app.float.home_swiper_margin') })
         .autoPlay(true)
 
