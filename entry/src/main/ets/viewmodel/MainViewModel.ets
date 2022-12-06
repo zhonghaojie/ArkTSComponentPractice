@@ -9,7 +9,6 @@ export class MainViewModel {
     ]
     return images;
   }
-
   getFirstGridData():Array<ItemData>{
     let firstGridData: ItemData[] = [
       new ItemData($r('app.string.my_love'), $r('app.media.love')),

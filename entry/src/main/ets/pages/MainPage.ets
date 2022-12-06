@@ -1,5 +1,5 @@
 import Home from '../view/Home'
-
+import Setting from '../view/Setting'
 @Entry
 @Component
 struct MainPage {
@@ -23,6 +23,7 @@ struct MainPage {
       //我的
       TabContent() {
         this.tabTitles($r('app.string.mainPage_tabTitles_mine'))
+        Setting()
       }
       .padding({ left: $r('app.float.mainPage_padding'), right: $r('app.float.mainPage_padding') })
       .backgroundColor($r('app.color.mainPage_backgroundColor'))

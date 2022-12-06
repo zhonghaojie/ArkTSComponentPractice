@@ -1,7 +1,7 @@
 import ItemData from '../common/bean/ItemData'
 import { MainViewModel } from '../viewmodel/MainViewModel'
 
-class HomeSwiperDataSource implements IDataSource {
+export class MyDataSource implements IDataSource {
   private list: any[] = []
   private listener: DataChangeListener
 
@@ -34,20 +34,20 @@ class HomeSwiperDataSource implements IDataSource {
 
 @Component
 export default struct Home {
-  private swiperImageDataSource: HomeSwiperDataSource ;
-  private firstGridDataSource: HomeSwiperDataSource ;
-  private secondGridDataSource: HomeSwiperDataSource ;
+  private swiperImageDataSource: MyDataSource ;
+  private firstGridDataSource: MyDataSource ;
+  private secondGridDataSource: MyDataSource ;
   private viewModel: MainViewModel = new MainViewModel();
 
   aboutToAppear() {
     if (this.swiperImageDataSource == null || this.swiperImageDataSource == undefined) {
-      this.swiperImageDataSource = new HomeSwiperDataSource(this.viewModel.getSwiperImages())
+      this.swiperImageDataSource = new MyDataSource(this.viewModel.getSwiperImages())
     }
     if (this.firstGridDataSource == null || this.firstGridDataSource == undefined) {
-      this.firstGridDataSource = new HomeSwiperDataSource(this.viewModel.getFirstGridData())
+      this.firstGridDataSource = new MyDataSource(this.viewModel.getFirstGridData())
     }
     if (this.secondGridDataSource == null || this.secondGridDataSource == undefined) {
-      this.secondGridDataSource = new HomeSwiperDataSource(this.viewModel.getSecondGridData())
+      this.secondGridDataSource = new MyDataSource(this.viewModel.getSecondGridData())
     }
   }
 
